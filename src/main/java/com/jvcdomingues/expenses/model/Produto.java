@@ -1,6 +1,7 @@
 package com.jvcdomingues.expenses.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -11,13 +12,17 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @NotNull
     private String nome;
 
+    @NotNull
     private BigDecimal preco;
 
+    @NotNull
     @Column(name="data_compra")
     private String dataCompra;
 
+    @NotNull
     private String categoria;
 
     public Produto() {}
